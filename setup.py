@@ -25,6 +25,7 @@ setup(name = name,
           'setuptools',
           'grok',
           'dolmen.content',
+          'dolmen.app.content'
       ],
       classifiers = [
         'Development Status :: 4 - Beta',
