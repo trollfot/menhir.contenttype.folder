@@ -3,8 +3,8 @@ from os.path import join
 
 name = 'menhir.contenttype.folder'
 version = '0.1'
-readme = open("README.txt").read()
-history = open("HISTORY.txt").read()
+readme = open(join('src', 'menhir', 'contenttype', 'folder', 'README.txt')).read()
+history = open(join('docs', 'HISTORY.txt')).read()
 
 setup(name = name,
       version = version,
@@ -16,7 +16,8 @@ setup(name = name,
       url = 'http://tracker.trollfot.org/',
       download_url = 'http://pypi.python.org/pypi/menhir.contenttype.folder',
       license = 'GPL',
-      packages = find_packages(),
+      packages=find_packages('src', exclude=['ez_setup']),
+      package_dir={'': 'src'},
       namespace_packages = ['menhir', 'menhir.contenttype'],
       include_package_data = True,
       platforms = 'Any',
@@ -25,7 +26,7 @@ setup(name = name,
           'setuptools',
           'grok',
           'dolmen.content',
-          'dolmen.app.content'
+          'dolmen.app.viewselector'
       ],
       classifiers = [
         'Development Status :: 4 - Beta',
