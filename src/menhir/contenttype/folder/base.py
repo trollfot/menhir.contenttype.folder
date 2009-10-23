@@ -16,7 +16,7 @@ class IFolder(IViewSelector):
     """
 
 
-class Folder(dolmen.content.Container):
+class Folder(dolmen.content.OrderedContainer):
     grok.implements(IFolder)
     dolmen.content.name(_(u"Folder"))
     dolmen.content.icon("folder.png")
