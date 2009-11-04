@@ -21,4 +21,4 @@ class Folder(dolmen.content.OrderedContainer):
     dolmen.content.name(_(u"Folder"))
     dolmen.content.icon("folder.png")
 
-    selected_view = FieldProperty(IFolder['selected_view'])
+    selected_view = "folderlisting"

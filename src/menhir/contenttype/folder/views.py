@@ -1,14 +1,14 @@
 import grok
 from base import IFolder
 from megrok.z3cform.base import IGrokForm
-from dolmen.app.container.browser import FolderListing
+from dolmen.app.container import listing
 from dolmen.app.viewselector import SelectablePage
 from zope.component import getMultiAdapter
 
 grok.context(IFolder)
 
 
-class ContentListingView(FolderListing, SelectablePage):
+class ContentListingView(listing.FolderListing, SelectablePage):
     grok.name('listing')
     grok.title('Content of the folder')
     
