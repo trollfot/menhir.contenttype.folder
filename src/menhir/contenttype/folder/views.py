@@ -2,18 +2,18 @@ import grok
 from base import IFolder
 from megrok.z3cform.base import IGrokForm
 from dolmen.app.container import listing
-from dolmen.app.viewselector import SelectablePage
+from dolmen.app.viewselector import AlternativeView
 from zope.component import getMultiAdapter
 
 grok.context(IFolder)
 
 
-class ContentListingView(listing.FolderListing, SelectablePage):
+class ContentListingView(listing.FolderListing, AlternativeView):
     grok.name('listing')
     grok.title('Content of the folder')
     
 
-class CompositeView(SelectablePage):
+class CompositeView(AlternativeView):
     grok.title('Summary view')
 
     def update(self):
