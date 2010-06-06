@@ -1,19 +1,26 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import grok
 from base import IFolder
+from dolmen import menu
+from dolmen.app.layout import Page
 from megrok.z3cform.base import IGrokForm
 from dolmen.app.container import listing
-from dolmen.app.viewselector import AlternativeView
+from dolmen.app.viewselector import SelectableViewsMenu
 from zope.component import getMultiAdapter
 
-grok.context(IFolder)
 
-
-class ContentListingView(listing.FolderListing, AlternativeView):
+@menu.menuentry(SelectableViewsMenu)
+class ContentListingView(listing.FolderListing):
     grok.name('listing')
+    grok.context(IFolder)
     grok.title('Content of the folder')
-    
 
-class CompositeView(AlternativeView):
+
+@menu.menuentry(SelectableViewsMenu)
+class CompositeView(Page):
+    grok.context(IFolder)
     grok.title('Summary view')
 
     def update(self):

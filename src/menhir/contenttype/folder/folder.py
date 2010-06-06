@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+$# -*- coding: utf-8 -*-
 
 import grok
 import dolmen.content
@@ -19,6 +19,4 @@ class IFolder(IViewSelector):
 class Folder(dolmen.content.OrderedContainer):
     grok.implements(IFolder)
     dolmen.content.name(_(u"Folder"))
-    dolmen.content.icon("folder.png")
-
     selected_view = "folderlisting"
