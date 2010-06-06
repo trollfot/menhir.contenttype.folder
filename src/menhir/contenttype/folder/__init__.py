@@ -1,1 +1,1 @@
-from menhir.contenttype.folder.folder import base import IFolder, Folder
+from menhir.contenttype.folder.folder import IFolder, Folder
