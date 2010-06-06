@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import grok
-from base import IFolder
 from dolmen import menu
-from dolmen.app.layout import Page
-from megrok.z3cform.base import IGrokForm
 from dolmen.app.container import listing
+from dolmen.app.layout import Page
 from dolmen.app.viewselector import SelectableViewsMenu
+from megrok.z3cform.base import IGrokForm
+from menhir.contenttype.folder import IFolder
 from zope.component import getMultiAdapter
 
 
