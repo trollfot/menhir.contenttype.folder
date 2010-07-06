@@ -6,7 +6,6 @@ from dolmen import menu
 from dolmen.app.container import listing
 from dolmen.app.layout import Page
 from dolmen.app.viewselector import SelectableViewsMenu
-from megrok.z3cform.base import IGrokForm
 from menhir.contenttype.folder import IFolder
 from zope.component import getMultiAdapter
 
@@ -28,5 +27,4 @@ class CompositeView(Page):
         for item in self.context.values():
             view = getMultiAdapter((item, self.request), name="index")
             view.update()
-            if IGrokForm.providedBy(view): view.updateForm()
             self.items.append(view.content())
