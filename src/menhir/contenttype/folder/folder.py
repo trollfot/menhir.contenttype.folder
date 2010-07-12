@@ -4,11 +4,9 @@ import grok
 import dolmen.content
 
 from zope.interface import implements
-from zope.i18nmessageid import MessageFactory
 from zope.schema.fieldproperty import FieldProperty
 from dolmen.app.viewselector import IViewSelector
-
-_ = MessageFactory('dolmen')
+from menhir.contenttype.folder import MCFMessageFactory as _
 
 
 class IFolder(IViewSelector):

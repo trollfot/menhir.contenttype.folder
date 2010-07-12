@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-07-12 15:22+0000\n"
+"POT-Creation-Date: 2010-07-12 15:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,15 +16,15 @@ msgstr ""
 
 #: ../folder.py:19
 msgid "Folder"
-msgstr "Dossier"
+msgstr ""
 
 #. Default: "Content of the folder"
 #: ../views.py:17
 msgid "label_folder_contents"
-msgstr "Contenu du dossier"
+msgstr ""
 
 #. Default: "Summary view"
 #: ../views.py:23
 msgid "label_summary_view"
-msgstr "Vue sommaire"
+msgstr ""
 

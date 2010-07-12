@@ -8,19 +8,19 @@ from dolmen.app.layout import Page
 from dolmen.app.viewselector import SelectableViewsMenu
 from menhir.contenttype.folder import IFolder
 from zope.component import getMultiAdapter
-
+from menhir.contenttype.folder import MCFMessageFactory as _
 
 @menu.menuentry(SelectableViewsMenu)
 class ContentListingView(listing.FolderListing):
     grok.name('listing')
     grok.context(IFolder)
-    grok.title('Content of the folder')
+    grok.title(_('label_folder_contents', default='Content of the folder'))
 
 
 @menu.menuentry(SelectableViewsMenu)
 class CompositeView(Page):
     grok.context(IFolder)
-    grok.title('Summary view')
+    grok.title(_('label_summary_view', default='Summary view'))
 
     def update(self):
         self.items = []
