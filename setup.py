@@ -6,6 +6,17 @@ version = '0.1'
 readme = open(join('src', 'menhir', 'contenttype', 'folder', 'README.txt')).read()
 history = open(join('docs', 'HISTORY.txt')).read()
 
+tests_require = [
+    'zope.component',
+    'zope.publisher',
+    'dolmen.app.security',
+    'zope.securitypolicy',
+    'zope.site',
+    'grokcore.content',
+    'zope.container',
+    'zope.security',
+    ]
+
 setup(name = name,
       version = version,
       description = 'Dolmen contenttype extension : folder',
@@ -22,16 +33,23 @@ setup(name = name,
       include_package_data = True,
       platforms = 'Any',
       zip_safe = False,
+      tests_require = tests_require,
+      extras_require = {'test': tests_require},
       install_requires=[
-          'setuptools',
-          'grok',
+          'dolmen.app.container',
+          'dolmen.app.content',
+          'dolmen.app.layout',
+          'dolmen.app.viewselector',
           'dolmen.content',
-          'dolmen.app.viewselector'
+          'dolmen.menu',
+          'grok',
+          'grokcore.view',
+          'setuptools',
+          'zope.component',
+          'zope.i18nmessageid',
       ],
       classifiers = [
-        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
-        'Framework :: Grok',
         'Intended Audience :: Other Audience',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',

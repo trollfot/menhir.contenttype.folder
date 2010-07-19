@@ -15,15 +15,6 @@
         component="zope.securitypolicy.zopepolicy.ZopeSecurityPolicy"
         />
 
-    <unauthenticatedPrincipal
-        id="zope.anybody"
-        title="Unauthenticated User"
-        />
-    <grant
-        permission="zope.View"
-        principal="zope.anybody"
-        />
-
     <principal
         id="zope.mgr"
         title="Manager"

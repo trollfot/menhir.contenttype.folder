@@ -10,6 +10,7 @@ from menhir.contenttype.folder import IFolder
 from zope.component import getMultiAdapter
 from menhir.contenttype.folder import MCFMessageFactory as _
 
+
 @menu.menuentry(SelectableViewsMenu)
 class ContentListingView(listing.FolderListing):
     grok.name('listing')

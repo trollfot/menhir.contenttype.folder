@@ -3,8 +3,7 @@
 import grok
 import dolmen.content
 
-from zope.interface import implements
-from zope.schema.fieldproperty import FieldProperty
+from dolmen.app.content import icon
 from dolmen.app.viewselector import IViewSelector
 from menhir.contenttype.folder import MCFMessageFactory as _
 
@@ -15,6 +14,7 @@ class IFolder(IViewSelector):
 
 
 class Folder(dolmen.content.OrderedContainer):
+    icon('folder.png')
     grok.implements(IFolder)
     dolmen.content.name(_(u"Folder"))
     selected_view = "folderlisting"
