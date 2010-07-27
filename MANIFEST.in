@@ -1,2 +1,2 @@
-recursive-include src/menhir/contenttype/folder *.txt *.py *.zcml *.po *.mo *.png
+recursive-include src/menhir/contenttype/folder *.txt *.py *.zcml *.po *.mo *.png *.pt
 recursive-include docs *.txt
