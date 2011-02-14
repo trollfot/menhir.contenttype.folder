@@ -17,7 +17,7 @@ A `Folder` does not have a particular schema. It uses only the
     >>> from dolmen.content import schema
     >>> from menhir.contenttype.folder import Folder
     >>> print schema.bind().get(Folder)
-    [<InterfaceClass menhir.contenttype.folder.folder.IFolder>]
+    [<InterfaceClass dolmen.app.content.interfaces.IDescriptiveSchema>]
 
 The instanciation provides a fully functionnal folderish object::
 

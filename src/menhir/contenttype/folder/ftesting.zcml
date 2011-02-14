@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="menhir.contenttype.folder"
     package="menhir.contenttype.folder">
 
@@ -9,6 +10,7 @@
   <include package="zope.security" file="meta.zcml" />
   <include package="zope.securitypolicy" file="meta.zcml" />
   <include package="zope.principalregistry" file="meta.zcml" />
+  <include package="zope.publisher" file="meta.zcml" />
 
   <include package="zope.i18n" />
   <include package="zope.security" />
@@ -25,6 +27,11 @@
   <include package="dolmen.content" />
   <include package="menhir.contenttype.folder" />
   
+  <browser:defaultView
+      for="dolmen.content.interfaces.IContent"
+      name="index"
+      />
+
   <!-- Typical functional testing security setup -->
   <securityPolicy
       component="zope.securitypolicy.zopepolicy.ZopeSecurityPolicy"

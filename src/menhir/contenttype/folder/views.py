@@ -7,9 +7,11 @@ from dolmen import menu
 from dolmen.app.container import listing
 from dolmen.app.layout import Page
 from dolmen.app.viewselector import SelectableViewsMenu
+from megrok.layout.interfaces import IPage
 from menhir.contenttype.folder import IFolder
-from zope.component import getMultiAdapter
 from menhir.contenttype.folder import MCFMessageFactory as _
+from zope.component import queryMultiAdapter
+from zope.publisher.defaultview import queryDefaultViewName
 
 
 @menu.menuentry(SelectableViewsMenu)
@@ -27,6 +29,9 @@ class CompositeView(Page):
     def update(self):
         self.items = []
         for item in self.context.values():
-            view = getMultiAdapter((item, self.request), name="index")
-            view.update()
-            self.items.append(view.content())
+            name = queryDefaultViewName(item, self.request, self.context)
+            if name is not None:
+                view = queryMultiAdapter((item, self.request), name=name)
+                if view is not None and IPage.providedBy(view):
+                    view.update()
+                    self.items.append(view.content())

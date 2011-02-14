@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 from os.path import join
 
 name = 'menhir.contenttype.folder'
-version = '0.3'
+version = '0.4'
 readme = open(join('src', 'menhir', 'contenttype',
                    'folder', 'README.txt')).read()
 history = open(join('docs', 'HISTORY.txt')).read()
@@ -49,10 +49,14 @@ setup(name = name,
           'dolmen.content >= 0.7',
           'dolmen.menu',
           'grokcore.view',
+          'megrok.layout',
           'setuptools',
           'zope.component',
+          'zope.container',
           'zope.i18n',
           'zope.i18nmessageid',
+          'zope.interface',
+          'zope.publisher',
       ],
       classifiers = [
         'Environment :: Web Environment',
