@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import grok
+import grokcore.view as grok
+
 from dolmen import menu
 from dolmen.app.container import listing
 from dolmen.app.layout import Page

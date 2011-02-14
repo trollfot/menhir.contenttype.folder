@@ -36,7 +36,8 @@ def test_suite():
     readme = doctest.DocFileSuite(
         'README.txt',
         globs={"__name__": "menhir.contenttype.folder"},
-        optionflags=(doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS))
+        optionflags=(doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
+                     | doctest.REPORT_NDIFF))
     readme.layer = MenhirTestLayer(menhir.contenttype.folder)
     suite.addTest(readme)
     return suite

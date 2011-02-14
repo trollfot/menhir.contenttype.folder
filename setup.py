@@ -1,20 +1,26 @@
+# -*- coding: utf-8 -*-
+
 from setuptools import setup, find_packages
 from os.path import join
 
 name = 'menhir.contenttype.folder'
-version = '0.2'
-readme = open(join('src', 'menhir', 'contenttype', 'folder', 'README.txt')).read()
+version = '0.3'
+readme = open(join('src', 'menhir', 'contenttype',
+                   'folder', 'README.txt')).read()
 history = open(join('docs', 'HISTORY.txt')).read()
 
 tests_require = [
-    'zope.component',
-    'zope.publisher',
     'dolmen.app.security',
+    'grokcore.content',
+    'zope.component',
+    'zope.container',
+    'zope.location',
+    'zope.principalregistry',
+    'zope.publisher',
+    'zope.security',
     'zope.securitypolicy',
     'zope.site',
-    'grokcore.content',
-    'zope.container',
-    'zope.security',
+    'zope.traversing',
     ]
 
 setup(name = name,
@@ -24,7 +30,7 @@ setup(name = name,
       keywords = 'Grok Zope3 CMS Dolmen',
       author = 'Souheil Chelfouh',
       author_email = 'souheil@chelfouh.com',
-      url = 'http://tracker.trollfot.org/',
+      url = 'http://www.dolmen-project.org/',
       download_url = 'http://pypi.python.org/pypi/menhir.contenttype.folder',
       license = 'GPL',
       packages=find_packages('src', exclude=['ez_setup']),
@@ -37,15 +43,15 @@ setup(name = name,
       extras_require = {'test': tests_require},
       install_requires=[
           'dolmen.app.container',
-          'dolmen.app.content',
+          'dolmen.app.content >= 1.0b1',
           'dolmen.app.layout',
           'dolmen.app.viewselector',
           'dolmen.content',
           'dolmen.menu',
-          'grok',
           'grokcore.view',
           'setuptools',
           'zope.component',
+          'zope.i18n',
           'zope.i18nmessageid',
       ],
       classifiers = [

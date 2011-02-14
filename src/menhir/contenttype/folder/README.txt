@@ -11,13 +11,13 @@ Schema
 ======
 
 A `Folder` does not have a particular schema. It uses only the
-`IBaseContent` archetype from ``dolmen.content``, exposing only the
-`title` attribute::
+`IDescriptiveSchema` from ``dolmen.app.content``, exposing only the
+`title` and `description` attributes::
 
     >>> from dolmen.content import schema
     >>> from menhir.contenttype.folder import Folder
     >>> print schema.bind().get(Folder)
-    [<InterfaceClass dolmen.content.interfaces.IBaseContent>]
+    [<InterfaceClass menhir.contenttype.folder.folder.IFolder>]
 
 The instanciation provides a fully functionnal folderish object::
 
@@ -98,19 +98,19 @@ Let's take a look at it from the browser's point-of-view.
       <tbody>
         <tr class="even">
           <td><a href="http://127.0.0.1/folder/books">books</a></td>
-          <td>None</td>
+          <td></td>
         </tr>
         <tr class="odd">
           <td><a href="http://127.0.0.1/folder/films">films</a></td>
-          <td>None</td>
+          <td></td>
         </tr>
         <tr class="even">
           <td><a href="http://127.0.0.1/folder/music">music</a></td>
-          <td>None</td>
+          <td></td>
         </tr>
         <tr class="odd">
-          <td><img src="http://127.0.0.1/@@/menhir-contenttype-folder-folder-IFolder-icon.png" alt="Folder" width="16" height="16" border="0" /> <a href="http://127.0.0.1/folder/subfolder">subfolder</a></td>
-          <td>...</td>
+          <td><img src="http://127.0.0.1/@@/menhir-contenttype-folder-folder-IFolder-icon.png" alt="Folder" width="16" height="16" border="0" /> <a href="http://127.0.0.1/folder/subfolder">SubFolder</a></td>
+          <td></td>
         </tr>
       </tbody>
     </table></div>
@@ -136,19 +136,19 @@ We should have a look at the default view (index) as well.
       <tbody>
         <tr class="even">
           <td><a href="http://127.0.0.1/folder/books">books</a></td>
-          <td>None</td>
+          <td></td>
         </tr>
         <tr class="odd">
           <td><a href="http://127.0.0.1/folder/films">films</a></td>
-          <td>None</td>
+          <td></td>
         </tr>
         <tr class="even">
           <td><a href="http://127.0.0.1/folder/music">music</a></td>
-          <td>None</td>
+          <td></td>
         </tr>
         <tr class="odd">
-          <td><img src="http://127.0.0.1/@@/menhir-contenttype-folder-folder-IFolder-icon.png" alt="Folder" width="16" height="16" border="0" /> <a href="http://127.0.0.1/folder/subfolder">subfolder</a></td>
-          <td>...</td>
+          <td><img src="http://127.0.0.1/@@/menhir-contenttype-folder-folder-IFolder-icon.png" alt="Folder" width="16" height="16" border="0" /> <a href="http://127.0.0.1/folder/subfolder">SubFolder</a></td>
+          <td></td>
         </tr>
       </tbody>
     </table></div>
@@ -169,21 +169,21 @@ provided in this package.
       <div class="composite-body sequence-block">
         <div><form action="http://127.0.0.1" method="post"
           enctype="multipart/form-data">
-      <h1>Books</h1>
+      <h1>books</h1>
     </form>
     </div>
       </div>
       <div class="composite-body sequence-block">
         <div><form action="http://127.0.0.1" method="post"
           enctype="multipart/form-data">
-      <h1>Films</h1>
+      <h1>films</h1>
     </form>
     </div>
       </div>
       <div class="composite-body sequence-block">
         <div><form action="http://127.0.0.1" method="post"
           enctype="multipart/form-data">
-      <h1>Music</h1>
+      <h1>music</h1>
     </form>
     </div>
       </div>
@@ -199,12 +199,12 @@ provided in this package.
       </thead>
       <tbody>
         <tr class="even">
-          <td><img src="http://127.0.0.1/@@/menhir-contenttype-folder-folder-IFolder-icon.png" alt="Folder" width="16" height="16" border="0" /> <a href="http://127.0.0.1/folder/subfolder/subfolder2">subfolder2</a></td>
-          <td>...</td>
+          <td><img src="http://127.0.0.1/@@/menhir-contenttype-folder-folder-IFolder-icon.png" alt="Folder" width="16" height="16" border="0" /> <a href="http://127.0.0.1/folder/subfolder/subfolder2">SubFolder Two</a></td>
+          <td></td>
         </tr>
         <tr class="odd">
           <td><a href="http://127.0.0.1/folder/subfolder/bogus">bogus</a></td>
-          <td>None</td>
+          <td></td>
         </tr>
       </tbody>
     </table></div>
